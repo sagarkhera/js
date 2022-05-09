@@ -1,0 +1,62 @@
+Since I work mostly on react, so will map these to specific implementations when writing frontends in React.
+SOLID
+Single Responsibility Principle - Every fun/class/comp should do exactly one thing.
+Open/ Closed Principle - should be able to add functionality to some module, w/o modifying its existing source code.
+Liskov Substitution Principle - If B extends A, anywhere u use A should be able to use B.
+Interface Segregation Principle - Don't make a component rely in props it doesn't care about.
+Dependency Inversion Principle - High level code shouldn't depend on implementation details - always use abstraction.
+
+SRP - 
+Large functions/components often indicate that they are doing more than one thing; try to keep functions/components small to ensure modularity.
+A function does one thing if you cannot meaningfully extract another function from it. If a function contains code, and you can extract another function from it, then that original 
+function did more than one thing.
+
+OCP - We should make our code extendible. We should be able to add new features without having to rewrite parts of our codebase.
+Luckily for us, React encourages this off the bat. This means you're probably already following this principle in your frontends without knowing it.
+This pretty much means that we should always build big components from smaller ones, using props and special properties like props.children to build complexity when required.
+
+LSP - Make classes substitutable for subclasses.
+we just don't really use this in React. Nowadays, all code should be written using hooks over classes anyway, and so classes should play an extremely minor role in modern React code. 
+
+ISP - The ISP states that people should not be forced to rely upon interfaces that they don't use.
+An implementation detail is some specific way a task is accomplished. For instance, "getting todos from the API" is a task we can accomplish by using the axios library 
+(an implementation detail). 
+Another task might be "storing users in a database"; our choice of database is an implementation detail for this task.
+
+DIP - The DIP tells us that we should "hide the wiring behind the wall" by always interacting with low-level details via abstractions. [13] This has strong ties to the SRP and 
+the ISP detailed above. 
+In practice, for React frontends, this means that functions in our high-level code shouldn't care how a specific task is done. 
+For instance, say we wanted to call an API to get a list of todos
+Does <TodosPage /> care how or where those todos come from? No! It interacts solely with the useTodos() function which hides a lot of this internal wiring away. 
+This makes our code much easier to read as we are able to see at a glance the purpose of the useTodos() function, and how it is used in the overall <TodosPage /> component. 
+This ties in very closely with the SRP, because as we extract functionality away from functions/components, we are necessarily making our high-level code interface with abstractions. 
+If we wanted to change how we obtained those todos (such as by using the fetch API instead of axios), we can do that without ever going into the <TodosPage /> component.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

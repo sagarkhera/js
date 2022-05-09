@@ -1,0 +1,38 @@
+Prototype Chaining
+Prototype chaining means an object’s dunder proto or proto property will point to another object instead of pointing to the constructor function prototype.
+
+//SuperType constructor function
+function SuperType(){
+	this.name = "Virat"
+}
+
+//SuperType prototype
+SuperType.prototype.getSuperName = function(){
+	return this.name
+}
+
+//SubType prototype function
+function SubType(){
+	this.age = 26
+}
+
+//Inherit the properties from SuperType
+SubType.prototype = new SuperType();
+
+//Add new property to SubType prototype
+SubType.prototype.getSubAge = function(){
+	return this.age;
+}
+
+//Create a SubType object
+var subTypeObj = new SubType();
+console.log(subTypeObj.name); //Output: Virat
+console.log(subTypeObj.age); //Output: 26
+console.log(subTypeObj.getSuperName()); //Output: Virat
+console.log(subTypeObj.getSubAge()); //Output: 26
+
+SubType object’s prototype property points to SuperType object. SuperType object’s prototype property points to the SuperSuperType object.
+
+Code splitting is the splitting of code into components or numerous bundles which can be loaded when there is a demand or in parallel. As an application grows, 
+the complexity of code grows, too, and CSS bundles, especially as the number and size of libraries increases. Code can be split into multiple smaller files to mitigate downloading 
+all files.

@@ -1,0 +1,36 @@
+When a function is created in JavaScript, the JavaScript engine adds a prototype property to the function. 
+This prototype property is an object (called a prototype object) that has a constructor property by default. 
+The constructor property points back to the function on which prototype object is a property. 
+We can access the function’s prototype property using functionName.prototype. -> Human.Prototype
+
+function Human(firstName, lastName) {
+	this.firstName = firstName,
+	this.lastName = lastName,
+	this.fullName = function() {
+		return this.firstName + " " + this.lastName;
+	}
+}
+
+var person1 = new Human("Virat", "Kohli");
+var person2 = new Human("Sachin", "Tendulkar");
+
+Every object created using the constructor function will have its own copy of properties and methods. 
+It doesn’t make sense to have two instances of function fullName that do the same thing. It leads to wastage of memory.
+
+console.log(person1);
+
+Prototype object has 2 properties - 
+constructor property: which points to function itself
+__proto__ property: points to the prototype object of the constructor function.
+
+Human.prototype === person1.__proto__ //true
+
+//Dot notation
+Human.prototype.name = "Ashwin";
+console.log(Human.prototype.name)//Output: Ashwin
+
+//Square bracket notation
+Human.prototype["age"] = 26;
+console.log(Human.prototype["age"]); //Output: 26
+
+we should define all the object-specific properties inside the constructor and all shared properties and methods inside the prototype

@@ -1,0 +1,34 @@
+For in for of
+Map, Set
+Stop propogation, stop Immediate Propagation,
+Synthetic events
+Prototype, __proto
+React portal, fiber
+Protected routes
+Shallow rendering
+Service worker
+Bowser vs application cache
+
+• Agile:
+• Code Review
+• Mentorship
+• Design Pattern
+• SOLID principle
+• Unit Test
+• Typescript
+• Hoisting
+• Prototype
+• Hoisting
+• Closure
+• Promise
+• Generator Function
+• Virtual Dom
+• Should component update
+• Class based component over functional:  yes
+• error boundary: Yes
+• Controlled and uncontrolled component
+• Refs
+• React memo, useMemo
+• Redux flow
+•  HOC
+• React Routing
